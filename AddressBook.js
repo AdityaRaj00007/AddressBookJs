@@ -44,7 +44,16 @@ class AddressBook{
 let addressBook = []  
 //to store addressbook to array
 function addAddress(address){
+    // Function to ensure there is no Duplicate Entry
+    let duplicateEntries = addressBook.filter(existingAddress => existingAddress.firstName === address.firstName);
+    
+    if (duplicateEntries.length > 0) {
+        console.log(address.firstName, "already exists");
+        return;
+    }
+    
     addressBook.push(address);
+    console.log(address.firstName, "added successfully");
 }
 //Functions to Find and Edit Address
 function editAddress(name, newDetails) { 
