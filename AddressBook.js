@@ -39,6 +39,12 @@ class AddressBook{
             throw new Error("Invalid ZIP code");
         }
     }
+    
+}
+let addressBook = []  
+//to store addressbook to array
+function addAddress(address){
+    addressBook.push(address);
 }
 
 
